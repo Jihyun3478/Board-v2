@@ -22,4 +22,4 @@
 
 #### 2. 기술 스택
 * Spring boot(web, thymeleaf, jpa, h2, lombok, validation)
-* H2 DataBase
+* H2 Database
