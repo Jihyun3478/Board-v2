@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="container" style="max-width: 600px">
+            <div class="py-5 text-center">
+                <h2>게시판 목록</h2>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-primary float-end"
+                            onclick="location.href='addForm.html'" type="button">글 등록</button>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>글쓴이</th>
+                            <th>내용</th>
+                            <th>작성 일자</th>
+                            <th>조회수</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td><a href="board.html">1</a></td>
+                            <td><a href="board.html">테스트 글 1</a></td>
+                            <td>글쓴이 1</td>
+                            <td>내용 1</td>
+                            <td>2023-05-14 21:53</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td><a href="board.html">2</a></td>
+                            <td><a href="board.html">테스트 글 자2</a></td>
+                            <td>글쓴이 2</td>
+                            <td>내용 2</td>
+                            <td>2023-05-15 22:00</td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
