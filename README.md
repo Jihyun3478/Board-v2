@@ -18,6 +18,7 @@
   - 게시글 전체 조회
   - 작성자별 조회
 * 페이징
+* 댓글 기능
 
 #### 2. 기술 스택
 * Spring boot(web, thymeleaf, lombok, validation)
