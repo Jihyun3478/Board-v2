@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/bootstrap.min.css"
+              th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
     </head>
 
     <body>
@@ -14,7 +15,9 @@
             <div class="row">
                 <div class="col">
                     <button class="btn btn-primary float-end"
-                            onclick="location.href='addForm.html'" type="button">글 등록</button>
+                            onclick="location.href='addForm.html'"
+                            th:onclick="|lolocation.href='@{/boardV2/boards/add}'|"
+                            type="button">글 등록</button>
                 </div>
             </div>
 
@@ -34,21 +37,13 @@
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td><a href="board.html">1</a></td>
-                            <td><a href="board.html">테스트 글 1</a></td>
-                            <td>글쓴이 1</td>
-                            <td>내용 1</td>
-                            <td>2023-05-14 21:53</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td><a href="board.html">2</a></td>
-                            <td><a href="board.html">테스트 글 자2</a></td>
-                            <td>글쓴이 2</td>
-                            <td>내용 2</td>
-                            <td>2023-05-15 22:00</td>
-                            <td>10</td>
+                        <tr th:each="board : ${boards}">
+                            <td><a href="board.html" th:href="@{/boardV2/boards/{id}(id=${board.id})}" th:text="${board.id}">번호</a></td>
+                            <td><a href="board.html" th:href="@{|/boardV2/boards/${board.id}|}" th:text="${board.name}">제목</a></td>
+                            <td th:text="${board.writer}">글쓴이</td>
+                            <td th:text="${board.writer}">내용</td>
+                            <td th:text="${board.writer}"></td>
+                            <td th:text="${board.writer}">1</td>
                         </tr>
                     </tbody>
                 </table>

@@ -16,10 +16,11 @@ public class Board {
     public Board() {
     }
 
-    public Board(String title, String writer, String content, int hit) {
+    public Board(String title, String writer, String content, LocalDateTime regdate, int hit) {
         this.title = title;
         this.writer = writer;
         this.content = content;
+        this.regdate = regdate;
         this.hit = hit;
     }
 }

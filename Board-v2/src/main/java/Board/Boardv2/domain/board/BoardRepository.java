@@ -27,8 +27,8 @@ public class BoardRepository {
         return new ArrayList<>(store.values());
     }
 
-    public void update(Long boardId, Board updateParam) {
-        Board findBoard = findById(boardId);
+    public void update(Long id, Board updateParam) {
+        Board findBoard = findById(id);
         findBoard.setTitle(updateParam.getTitle());
         findBoard.setWriter(updateParam.getWriter());
         findBoard.setContent(updateParam.getContent());
