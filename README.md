@@ -16,10 +16,8 @@
   - 게시글 수정
   - 게시글 삭제
   - 게시글 전체 조회
-  - 회원 ID별 조회
-  - 날짜별 오름차순/내림차순 게시글 정렬
+  - 작성자별 조회
 * 페이징
 
 #### 2. 기술 스택
-* Spring boot(web, thymeleaf, jpa, h2, lombok, validation)
-* H2 Database
+* Spring boot(web, thymeleaf, lombok, validation)
