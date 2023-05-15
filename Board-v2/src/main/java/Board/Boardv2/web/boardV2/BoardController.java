@@ -5,9 +5,8 @@ import Board.Boardv2.domain.board.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.PostConstruct;
 import java.time.LocalDateTime;
@@ -36,6 +35,27 @@ public class BoardController {
     @GetMapping("/add")
     public String addForm() {
         return "boardV2/addForm";
+    }
+
+    @PostMapping("/add")
+    public String addBoard(Board board, RedirectAttributes redirectAttributes) {
+        Board savedBoard = boardRepository.save(board);
+        redirectAttributes.addAttribute("id", savedBoard.getId());
+        redirectAttributes.addAttribute("status", true);
+        return "redirect:/boardV2/boards/{id}";
+    }
+
+    @GetMapping("/{id}/edit")
+    public String editForm(@PathVariable Long id, Model model) {
+        Board board = boardRepository.findById(id);
+        model.addAttribute("board", board);
+        return "boardV2/editForm";
+    }
+
+    @PostMapping("/{id}/edit")
+    public String edit(@PathVariable Long id, @ModelAttribute Board board) {
+        boardRepository.update(id, board);
+        return "redirect:/boardV2/boards/{id}";
     }
 
     /*

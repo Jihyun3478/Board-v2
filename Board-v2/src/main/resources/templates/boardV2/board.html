@@ -13,7 +13,11 @@
 
     <body>
         <div class="container">
-            <h2>글 상세</h2>
+            <div class="py-5 text-center">
+                <h2>글 상세</h2>
+            </div>
+
+            <h2 th:if="${param.status}" th:text="'저장 완료!'"></h2>
 
             <div>
                 <label for="id">번호</label>
@@ -27,17 +31,17 @@
 
             <div>
                 <label for="writer">글쓴이</label>
-                <input type="text" id="writer" name="writer" class="form-control" value="글쓴이1" th:value="${board.writer}"readonly>
+                <input type="text" id="writer" name="writer" class="form-control" value="글쓴이1" th:value="${board.writer}" readonly>
             </div>
 
             <div>
                 <label for="content"></label>
-                <input type="text" id="content" name="content" class="form-control" value="내용1" th:value="${board.content}"readonly>
+                <input type="text" id="content" name="content" class="form-control" value="내용1" th:value="${board.content}" readonly>
             </div>
 
             <div>
                 <label for="regdate">작성 일자</label>
-                <input type="text" id="regdate" name="regdate" class="form-control" value="작성일자1" th:value="${board.regdate}"readonly>
+                <input type="text" id="regdate" name="regdate" class="form-control" value="작성일자1" th:value="${board.regdate}" readonly>
             </div>
 
             <div>
