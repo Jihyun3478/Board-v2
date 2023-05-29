@@ -1,0 +1,26 @@
+package Board.Boardv2.domain.Posts;
+
+import lombok.Data;
+
+import java.util.Date;
+
+@Data
+public class Posts {
+
+    private Long postId;
+    private String postTitle;
+    private String postWriter;
+    private String postContent;
+    private Date createdate;
+    private Date modifyDate;
+
+    public Posts() {}
+
+    public Posts(String postTitle, String postWriter, String postContent, Date createdate, Date modifyDate) {
+        this.postTitle = postTitle;
+        this.postWriter = postWriter;
+        this.postContent = postContent;
+        this.createdate = createdate;
+        this.modifyDate = modifyDate;
+    }
+}
