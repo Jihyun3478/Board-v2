@@ -29,7 +29,6 @@
                             <th>번호</th>
                             <th>제목</th>
                             <th>작성자</th>
-                            <th>내용</th>
                             <th>작성 날짜</th>
                             <th>조회수</th>
                         </tr>
@@ -37,10 +36,9 @@
 
                     <tbody>
                         <tr th:each="post : ${posts}">
-                            <td><a href="post.html" th:href="@{/boardV2/posts/{postId}(postId=${post.postId})}" th:text="${post.postId}">1</a></td>
+                            <td th:text="${post.postId}">1</td>
                             <td><a href="post.html" th:href="@{/boardV2/posts/{postId}(postId=${post.postId})}" th:text="${post.postTitle}">title1</a></td>
                             <td th:text="${post.postWriter}">writer1</td>
-                            <td th:text="${post.postContent}">content1</td>
                             <td th:text="${post.postDate}">2023-05-30</td>
                             <td th:text="${post.postHit}">10</td>
                         </tr>

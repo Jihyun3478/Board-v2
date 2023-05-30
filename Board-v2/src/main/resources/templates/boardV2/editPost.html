@@ -44,8 +44,8 @@
 
                 <div>
                     <label for="postDate">작성 날짜</label>
-                    <input type="text" id="postDate" name="postDate"
-                           class="form-control" th:value="${post.postDate}">
+                    <input type="date" id="postDate" name="postDate"
+                           class="form-control" th:value="${post.postDate}" readonly>
                 </div>
 
                 <div>
@@ -71,3 +71,7 @@
         </div> <!-- /container -->
     </body>
 </html>
+
+<script>
+    document.getElementById('postDate').valueAsDate = new Date();
+</script>
