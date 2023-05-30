@@ -29,8 +29,8 @@ public class PostsRepository {
         findPost.setPostTitle(updateParam.getPostTitle());
         findPost.setPostWriter(updateParam.getPostWriter());
         findPost.setPostContent(updateParam.getPostContent());
-        findPost.setCreatedate(updateParam.getCreatedate());
-        findPost.setModifyDate(updateParam.getModifyDate());
+        findPost.setPostDate(updateParam.getPostDate());
+        findPost.setPostHit(updateParam.getPostHit());
     }
 
     public void clearStore() {

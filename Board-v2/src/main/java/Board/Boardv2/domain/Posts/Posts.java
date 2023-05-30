@@ -11,16 +11,16 @@ public class Posts {
     private String postTitle;
     private String postWriter;
     private String postContent;
-    private Date createdate;
-    private Date modifyDate;
+    private Date postDate;
+    private int postHit;
 
     public Posts() {}
 
-    public Posts(String postTitle, String postWriter, String postContent, Date createdate, Date modifyDate) {
+    public Posts(String postTitle, String postWriter, String postContent, Date postDate, int postHit) {
         this.postTitle = postTitle;
         this.postWriter = postWriter;
         this.postContent = postContent;
-        this.createdate = createdate;
-        this.modifyDate = modifyDate;
+        this.postDate = postDate;
+        this.postHit = postHit;
     }
 }
