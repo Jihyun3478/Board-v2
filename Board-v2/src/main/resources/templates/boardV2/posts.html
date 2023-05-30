@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8">
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link th:href="@{/css/bootstrap.min.css}"
+              href="../css/bootstrap.min.css" rel="stylesheet">
     </head>
 
     <body>
@@ -10,11 +11,16 @@
             <div class="py-5 text-center">
                 <h2>게시물 목록</h2>
             </div>
+
             <div class="row">
                 <div class="col">
-                    <button class="btn btn-primary float-end" onclick="location.href='addPost.html'" type="button">게시물 등록</button>
+                    <button class="btn btn-primary float-end"
+                            onclick="location.href='addPost.html'"
+                            th:onclick="|location.href='@{/boardV2/posts/add}'|"
+                            type="button">게시물 등록</button>
                 </div>
             </div>
+
             <hr class="my-4">
             <div>
                 <table class="table">
@@ -25,26 +31,18 @@
                             <th>작성자</th>
                             <th>내용</th>
                             <th>작성 날짜</th>
-                            <th>조회수</th>호
+                            <th>조회수</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td><a href="post.html">1</a></td>
-                            <td><a href="post.html">테스트 글 1</a></td>
-                            <td>홍길동</td>
-                            <td>안녕하세요</td>
-                            <td></td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <td><a href="post.html">2</a></td>
-                            <td><a href="post.html">테스트 글 2</a></td>
-                            <td>John</td>
-                            <td>Hello</td>
-                            <td></td>
-                            <td>100</td>
+                        <tr th:each="post : ${posts}">
+                            <td><a href="post.html" th:href="@{/boardV2/posts/{postId}(postId=${post.postId})}" th:text="${post.postId}">1</a></td>
+                            <td><a href="post.html" th:href="@{/boardV2/posts/{postId}(postId=${post.postId})}" th:text="${post.postTitle}">title1</a></td>
+                            <td th:text="${post.postWriter}">writer1</td>
+                            <td th:text="${post.postContent}">content1</td>
+                            <td th:text="${post.postDate}">2023-05-30</td>
+                            <td th:text="${post.postHit}">10</td>
                         </tr>
                     </tbody>
                 </table>

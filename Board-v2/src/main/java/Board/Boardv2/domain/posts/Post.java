@@ -3,7 +3,7 @@ package Board.Boardv2.domain.posts;
 import lombok.Data;
 
 @Data
-public class Posts {
+public class Post {
 
     private Long postId;
     private String postTitle;
@@ -12,9 +12,9 @@ public class Posts {
     private String postDate;
     private int postHit;
 
-    public Posts() {}
+    public Post() {}
 
-    public Posts(String postTitle, String postWriter, String postContent, String postDate, int postHit) {
+    public Post(String postTitle, String postWriter, String postContent, String postDate, int postHit) {
 
         this.postTitle = postTitle;
         this.postWriter = postWriter;

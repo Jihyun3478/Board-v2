@@ -8,39 +8,39 @@ import java.util.List;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
-class PostsRepositoryTest {
+class PostRepositoryTest {
 
-    PostsRepository postsRepository = new PostsRepository();
+    PostRepository postRepository = new PostRepository();
     Date date = new Date();
 
     @AfterEach
     void afterEach() {
-        postsRepository.clearStore();
+        postRepository.clearStore();
     }
 
     @Test
     void save() {
         // given
-        Posts post = new Posts("title1", "writer1", "content1", date.toString(), 1);
+        Post post = new Post("title1", "writer1", "content1", date.toString(), 1);
 
         // when
-        Posts savedPost = postsRepository.save(post);
+        Post savedPost = postRepository.save(post);
 
         // then
-        Posts findPost = postsRepository.findById(post.getPostId());
+        Post findPost = postRepository.findById(post.getPostId());
         assertThat(findPost).isEqualTo(savedPost);
     }
 
     @Test
     void findAll() {
         // given
-        Posts post1 = new Posts("title1", "writer1", "content1", date.toString(), 10);
-        Posts post2 = new Posts("title2", "writer2", "content2", date.toString(), 100);
-        postsRepository.save(post1);
-        postsRepository.save(post2);
+        Post post1 = new Post("title1", "writer1", "content1", date.toString(), 10);
+        Post post2 = new Post("title2", "writer2", "content2", date.toString(), 100);
+        postRepository.save(post1);
+        postRepository.save(post2);
 
         // when
-        List<Posts> result = postsRepository.findAll();
+        List<Post> result = postRepository.findAll();
 
         // then
         assertThat(result.size()).isEqualTo(2);
@@ -50,17 +50,17 @@ class PostsRepositoryTest {
     @Test
     void updatePost() {
         // given
-        Posts post = new Posts("title1", "writer1", "content1", date.toString(), 10);
+        Post post = new Post("title1", "writer1", "content1", date.toString(), 10);
 
-        Posts savedPost = postsRepository.save(post);
+        Post savedPost = postRepository.save(post);
         Long postId = savedPost.getPostId();
 
         // when
-        Posts updateParam = new Posts("title2", "writer2", "content2", date.toString(), 250);
-        postsRepository.update(postId, updateParam);
+        Post updateParam = new Post("title2", "writer2", "content2", date.toString(), 250);
+        postRepository.update(postId, updateParam);
 
         // then
-        Posts findPost = postsRepository.findById(postId);
+        Post findPost = postRepository.findById(postId);
 
         assertThat(findPost.getPostTitle()).isEqualTo(updateParam.getPostTitle());
         assertThat(findPost.getPostWriter()).isEqualTo(updateParam.getPostWriter());
