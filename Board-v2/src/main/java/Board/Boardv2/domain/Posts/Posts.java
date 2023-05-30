@@ -11,12 +11,13 @@ public class Posts {
     private String postTitle;
     private String postWriter;
     private String postContent;
-    private Date postDate;
+    private String postDate;
     private int postHit;
 
     public Posts() {}
 
-    public Posts(String postTitle, String postWriter, String postContent, Date postDate, int postHit) {
+    public Posts(String postTitle, String postWriter, String postContent, String postDate, int postHit) {
+
         this.postTitle = postTitle;
         this.postWriter = postWriter;
         this.postContent = postContent;
