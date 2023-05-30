@@ -1,4 +1,4 @@
-package Board.Boardv2.domain.Posts;
+package Board.Boardv2.domain.posts;
 
 import org.springframework.stereotype.Repository;
 

@@ -1,8 +1,6 @@
-package Board.Boardv2.domain.Posts;
+package Board.Boardv2.domain.posts;
 
 import lombok.Data;
-
-import java.util.Date;
 
 @Data
 public class Posts {

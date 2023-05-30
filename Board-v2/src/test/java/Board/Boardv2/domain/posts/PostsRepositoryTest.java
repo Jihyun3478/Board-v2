@@ -1,7 +1,5 @@
 package Board.Boardv2.domain.posts;
 
-import Board.Boardv2.domain.Posts.Posts;
-import Board.Boardv2.domain.Posts.PostsRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
