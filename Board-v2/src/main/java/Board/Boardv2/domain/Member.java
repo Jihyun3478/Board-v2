@@ -1,5 +1,6 @@
 package Board.Boardv2.domain;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +9,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 @Entity
+@Table(name = "member")
 @Getter @Setter
 public class Member {
 
