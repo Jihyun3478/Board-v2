@@ -1,6 +1,7 @@
 package Board.Boardv2.domain.member;
 
-import org.assertj.core.api.Assertions;
+import Board.Boardv2.domain.Member;
+import Board.Boardv2.repository.MemberRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

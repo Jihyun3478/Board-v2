@@ -1,4 +1,4 @@
-package Board.Boardv2.domain.member;
+package Board.Boardv2.domain;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.ArrayList;
 
 @Entity
-@Table(name = "member")
 @Getter @Setter
 public class Member {
 
@@ -21,6 +20,6 @@ public class Member {
     private String name;
     private String email;
 
-//    @OneToMany(mappedBy = "member")
-//    private List<Post> posts = new ArrayList<>();
+    @OneToMany(mappedBy = "member")
+    private List<Post> posts = new ArrayList<>();
 }

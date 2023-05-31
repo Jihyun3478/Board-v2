@@ -1,5 +1,6 @@
-package Board.Boardv2.domain.member;
+package Board.Boardv2.repository;
 
+import Board.Boardv2.domain.Member;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
