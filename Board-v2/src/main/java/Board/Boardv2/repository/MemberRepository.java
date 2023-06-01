@@ -13,7 +13,7 @@ public class MemberRepository {
     @PersistenceContext
     private EntityManager em;
 
-    public void save(Member member) {
+    public void saveMember(Member member) {
         em.persist(member);
     }
 
