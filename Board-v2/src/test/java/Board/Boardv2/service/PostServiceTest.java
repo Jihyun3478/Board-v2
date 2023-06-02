@@ -1,13 +1,22 @@
-//package Board.Boardv2.domain.post;
+//package Board.Boardv2.service;
 //
+//import Board.Boardv2.domain.Post;
+//import Board.Boardv2.repository.PostRepository;
 //import org.junit.jupiter.api.AfterEach;
 //import org.junit.jupiter.api.Test;
+//import org.junit.runner.RunWith;
+//import org.springframework.boot.test.context.SpringBootTest;
+//import org.springframework.test.context.junit4.SpringRunner;
+//import org.springframework.transaction.annotation.Transactional;
 //
 //import java.util.Date;
 //import java.util.List;
 //
 //import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 //
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
+//@Transactional
 //class PostRepositoryTest {
 //
 //    PostRepository postRepository = new PostRepository();
