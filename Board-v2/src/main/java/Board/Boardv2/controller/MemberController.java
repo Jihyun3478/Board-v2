@@ -14,15 +14,15 @@ import javax.validation.Valid;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/member")
+//@RequestMapping("/member")
 public class MemberController {
 
     private final MemberRepository memberRepository;
 
-    @GetMapping("/add")
+    @GetMapping("/sign-up")
     public String addForm(@ModelAttribute("member") Member member) { return "member/addMember"; }
 
-    @PostMapping("/add")
+    @PostMapping("/sign-up")
     public String save(@Valid @ModelAttribute("member")Member member, BindingResult bindingResult) {
         if(bindingResult.hasErrors()) {
             return "member/addMember";
