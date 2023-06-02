@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>게시판</title>
+
+        <link th:href="@{/css/bootstrap.min.css}"
+              href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/headers.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <main>
+            <header class="p-3 mb-3 border-bottom">
+                <div th:replace="fragments/bodyHeader :: bodyHeader" />
+            </header>
+        </main>
+
+        <div class="container" style="max-width: 600px">
+            <div class="py-5 text-center">
+                <h2>게시물 목록</h2>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-primary float-end"
+                            onclick="location.href='addPost.html'"
+                            th:onclick="|location.href='@{/post/addPost}'|"
+                            type="button">게시물 등록</button>
+                </div>
+            </div>
+
+            <hr class="my-4">
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>작성자</th>
+                            <th>작성 날짜</th>
+                            <th>조회수</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr th:each="post : ${posts}">
+                            <td th:text="${post.postId}">1</td>
+                            <td><a href="post/post.html"
+                                   th:href="@{/boardV2/posts/{postId}(postId=${post.postId})}"
+                                   th:text="${post.postTitle}">title1</a></td>
+                            <td th:text="${post.postWriter}">writer1</td>
+                            <td th:text="${post.postDate}">2023-05-30</td>
+                            <td th:text="${post.postHit}">10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div> <!-- /container -->
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
