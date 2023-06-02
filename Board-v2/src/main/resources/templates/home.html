@@ -2,11 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
-        <title>게시판</title>
+        <title>게시판 Ver.2</title>
 
-        <link th:href="@{/css/bootstrap.min.css}"
-              href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/headers.css" rel="stylesheet">
+        <link href="../css/bootstrap.min.css"
+              th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+        <link href="../css/headers.css"
+              th:href="@{/css/headers.css}" rel="stylesheet">
     </head>
 
     <body>
@@ -14,6 +15,7 @@
             <header class="p-3 mb-3 border-bottom">
                 <div th:replace="fragments/bodyHeader :: bodyHeader" />
             </header>
+            <p class="mt-5 mb-3 text-muted">&copy; 게시판 Ver.2</p>
         </main>
 
         <div class="container" style="max-width: 600px">
@@ -57,7 +59,6 @@
                 </table>
             </div>
         </div> <!-- /container -->
-
         <script src="js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

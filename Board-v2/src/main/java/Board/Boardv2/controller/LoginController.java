@@ -1,10 +1,8 @@
 package Board.Boardv2.controller;
 
-import Board.Boardv2.domain.LoginForm;
 import Board.Boardv2.domain.Member;
 import Board.Boardv2.service.LoginService;
 import Board.Boardv2.session.SessionConst;
-import Board.Boardv2.session.SessionManager;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -25,20 +23,19 @@ import javax.validation.Valid;
 public class LoginController {
 
     private final LoginService loginService;
-    private final SessionManager sessionManager;
 
     @GetMapping("/sign-in")
-    public String loginForm(@ModelAttribute("loginForm") LoginForm form) {
+    public String loginForm(@ModelAttribute("loginForm") Member member) {
         return "login/loginForm";
     }
 
     @PostMapping("/sign-in")
-    public String login(@Valid @ModelAttribute LoginForm form, BindingResult bindingResult, HttpServletRequest request) {
+    public String login(@Valid @ModelAttribute Member member, BindingResult bindingResult, HttpServletRequest request) {
         if (bindingResult.hasErrors()) {
             return "login/loginForm";
         }
 
-        Member loginMember = loginService.Login(form.getLoginEmail(), form.getLoginPw());
+        Member loginMember = loginService.Login(member.getLoginEmail(), member.getLoginPw());
 
         if (loginMember == null) {
             bindingResult.reject("loginFail", "아이디 또는 비밀번호가 틀렸습니다.");
@@ -58,11 +55,5 @@ public class LoginController {
             session.invalidate();
         }
         return "redirect:/";
-    }
-
-    private static void expireCookie(HttpServletResponse response, String cookieName) {
-        Cookie cookie = new Cookie(cookieName, null);
-        cookie.setMaxAge(0);
-        response.addCookie(cookie);
     }
 }
