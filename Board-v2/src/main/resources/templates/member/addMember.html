@@ -22,7 +22,7 @@
         </div>
 
         <h4 class="mb-3">회원 정보 입력</h4>
-        <form action="/sign-up" th:action th:object="${member}" method="post">
+        <form action="/sign-up" th:action method="post" th:object="${member}">
             <div th:if="${#fields.hasGlobalErrors()}">
                 <p class="field-error"
                    th:each="err : ${#fields.globalErrors()}"

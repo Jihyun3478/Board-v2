@@ -32,7 +32,7 @@ public class LoginController {
         return "login/loginForm";
     }
 
-    @PostMapping("/login")
+    @PostMapping("/sign-in")
     public String login(@Valid @ModelAttribute LoginForm form, BindingResult bindingResult, HttpServletRequest request) {
         if (bindingResult.hasErrors()) {
             return "login/loginForm";
@@ -51,7 +51,7 @@ public class LoginController {
         return "redirect:/";
     }
 
-    @PostMapping("/logout")
+    @PostMapping("/sign-out")
     public String logout(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         if(session != null) {
