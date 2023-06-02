@@ -18,11 +18,11 @@ public class Member {
     private Long id;
 
     @NotEmpty(message = "이메일을 입력해주세요.")
-    @Pattern(regexp = "[.@]{3,12}$", message = "3-12자로 입력해주세요")
+//    @Pattern(regexp = "[.@]{3,12}$", message = "3-12자로 입력해주세요")
     private String loginEmail;
 
     @NotEmpty(message = "비밀번호을 입력해주세요.")
-    @Pattern(regexp = "^{8,12}$", message = "8-12자로 입력해주세요")
+//    @Pattern(regexp = "^{8,12}$", message = "8-12자로 입력해주세요")
     private String loginPw;
 
     private String name;

@@ -1,4 +1,4 @@
-package Board.Boardv2.service;
-
-public class PostService {
-}
+//package Board.Boardv2.service;
+//
+//public class PostService {
+//}

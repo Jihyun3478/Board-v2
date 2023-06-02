@@ -3,11 +3,13 @@ package Board.Boardv2.repository;
 import Board.Boardv2.domain.Member;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import java.util.List;
 
 @Repository
+@Transactional
 @RequiredArgsConstructor
 public class MemberRepository {
 

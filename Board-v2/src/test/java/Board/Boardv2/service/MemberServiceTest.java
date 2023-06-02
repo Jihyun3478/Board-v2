@@ -7,8 +7,11 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Commit;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.persistence.EntityManager;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -16,22 +19,28 @@ import static org.junit.jupiter.api.Assertions.fail;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Transactional
-@Commit
+
+//@Commit
 public class MemberServiceTest {
 
     @Autowired MemberService memberService;
     @Autowired MemberRepository memberRepository;
+    @Autowired EntityManager em;
 
     @Test
+    @Rollback(false)
     public void 회원가입() throws Exception {
         // given : 전제조건
         Member member = new Member();
+        member.setLoginEmail("hun3478@gmail.com");
+        member.setLoginPw("08150719");
         member.setName("이지현");
 
         // when : 지정하는 동작
         Long saveId = memberService.join(member);
 
         // then : 지정된 동작으로 인해 발생하는 변경 사항
+        em.flush();
         assertEquals(member, memberRepository.findOne(saveId));
     }
 
