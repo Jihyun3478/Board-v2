@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 @Transactional
@@ -32,5 +33,11 @@ public class MemberRepository {
         return em.createQuery("select m from Member m where m.name = :name", Member.class)
                 .setParameter("name", name)
                 .getResultList();
+    }
+
+    public Optional<Member> findByLoginEmail(String loginEmail) {
+        return findAll().stream()
+                .filter(m -> m.getLoginEmail().equals(loginEmail))
+                .findFirst();
     }
 }
