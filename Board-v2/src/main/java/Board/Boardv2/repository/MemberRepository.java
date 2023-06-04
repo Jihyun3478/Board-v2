@@ -29,15 +29,15 @@ public class MemberRepository {
                 .getResultList();
     }
 
-    public List<Member> findByName(String name) {
-        return em.createQuery("select m from Member m where m.name = :name", Member.class)
-                .setParameter("name", name)
-                .getResultList();
-    }
-
     public Optional<Member> findByLoginEmail(String loginEmail) {
         return findAll().stream()
                 .filter(m -> m.getLoginEmail().equals(loginEmail))
                 .findFirst();
+    }
+
+    public List<Member> findByName(String name) {
+        return em.createQuery("select m from Member m where m.name = :name", Member.class)
+                .setParameter("name", name)
+                .getResultList();
     }
 }

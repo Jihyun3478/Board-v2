@@ -19,30 +19,26 @@ public class MemberService {
      */
     @Transactional
     public Long join(Member member) {
-        validateDuplicationMember(member);
+        validateDuplicationName(member);
+//        validateDuplicationEmail(member);
         memberRepository.saveMember(member);
 
         return member.getId();
     }
 
-    private void validateDuplicationMember(Member member) {
+    // 닉네임 중복
+    private void validateDuplicationName(Member member) {
         List<Member> findMembers = memberRepository.findByName(member.getName());
         if(!findMembers.isEmpty()) {
-            throw new IllegalStateException("이미 존재하는 회원입니다.");
+            throw new IllegalStateException("이미 존재하는 닉네임입니다.");
         }
     }
 
-    /*
-     * 전체 회원 조회
-     */
-    public List<Member> findMembers() {
-        return memberRepository.findAll();
-    }
-
-    /*
-     * 개인 조회
-     */
-    public Member findOne(Long memberId) {
-        return memberRepository.findOne(memberId);
-    }
+    // 이메일 중복
+//    private void validateDuplicationEmail(Member member) {
+//        List<Member> findMembers = memberRepository.findByLoginEmail(member.getLoginEmail());
+//        if(!findMembers.isEmpty()) {
+//            throw new IllegalStateException("사용 중인 이메일입니다.");
+//        }
+//    }
 }

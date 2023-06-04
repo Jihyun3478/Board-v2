@@ -25,10 +25,11 @@ public class Member {
 //    @Pattern(regexp = "^{8,12}$", message = "8-12자로 입력해주세요")
     private String loginPw;
 
+    @NotEmpty(message = "닉네임을 입력해주세요.")
     private String name;
 
-    @OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
-    private List<Post> posts = new ArrayList<>();
+//    @OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
+//    private List<Post> posts = new ArrayList<>();
 
 //    @Builder
 //    public Member(String loginEmail, String loginPw, String name) {

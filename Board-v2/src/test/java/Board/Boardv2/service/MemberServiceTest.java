@@ -46,9 +46,13 @@ public class MemberServiceTest {
     public void 중복_회원_예외() throws Exception {
         // given
         Member member1 = new Member();
+        member1.setLoginEmail("hun3478@gmail.com");
+        member1.setLoginPw("1234");
         member1.setName("이지현");
 
         Member member2 = new Member();
+        member1.setLoginEmail("hun3478@naver.com");
+        member1.setLoginPw("1234");
         member1.setName("이지현");
 
         // when
