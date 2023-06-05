@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="header">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <title>게시물 등록</title>
+</head>
+
+<style>
+    .fieldError {
+        border-color: #bd2130;
+    }
+</style>
+
+<body>
+<div class="container">
+    <form th:action="@{/posts/new}" th:object="${form}" method="post">
+
+        <div class="form-group">
+            <label th:for="postTitle">제목</label>
+            <input type="text" th:field="*{postTitle}" class="form-control" placeholder="제목을 입력하세요">
+        </div>
+        <div class="form-group">
+            <label th:for="postContent">내용</label>
+            <input type="text" th:field="*{postContent}" class="form-control" placeholder="내용을 입력하세요">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+    <br/>
+
+    <div class="footer" th:fragment="footer">
+        <p>&copy; 게사판 Ver.2</p>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>
