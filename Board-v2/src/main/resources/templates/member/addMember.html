@@ -21,6 +21,8 @@
             <h2>회원 가입</h2>
         </div>
 
+        <h2 th:if="${param.status}" th:text="'저장 완료!'"></h2>
+
         <h4 class="mb-3">회원 정보 입력</h4>
         <form action="/sign-up" th:action method="post" th:object="${member}">
             <div th:if="${#fields.hasGlobalErrors()}">

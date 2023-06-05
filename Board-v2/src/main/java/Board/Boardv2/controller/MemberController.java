@@ -28,6 +28,7 @@ public class MemberController {
             return "member/addMember";
         }
         memberRepository.saveMember(member);
-        return "redirect:/";
+//        return "redirect:/";
+        return "login/loginForm";
     }
 }
