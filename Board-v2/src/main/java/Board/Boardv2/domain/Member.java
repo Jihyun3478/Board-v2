@@ -3,9 +3,10 @@ package Board.Boardv2.domain;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 @Getter @Setter
@@ -15,14 +16,7 @@ public class Member {
     @Column(name = "member_id")
     private Long id;
 
-    @NotEmpty(message = "이메일을 입력해주세요.")
-//    @Pattern(regexp = "[.@]{3,12}$", message = "3-12자로 입력해주세요")
     private String loginEmail;
-
-    @NotEmpty(message = "비밀번호을 입력해주세요.")
-//    @Pattern(regexp = "^{8,12}$", message = "8-12자로 입력해주세요")
     private String loginPw;
-
-    @NotEmpty(message = "닉네임을 입력해주세요.")
     private String name;
 }
