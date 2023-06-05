@@ -6,10 +6,13 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
+//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+//@DiscriminatorColumn(name = "dtype")
 @Getter @Setter
 public class Post {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name = "post_id")
     private Long postId;
 
@@ -22,18 +25,4 @@ public class Post {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
-
-    public Post(String postTitle, String postWriter, String postContent, String postDate, int postHit) {
-        this.postTitle = postTitle;
-        this.postWriter = postWriter;
-        this.postContent = postContent;
-        this.postDate = postDate;
-        this.postHit = postHit;
-    }
-
-    //==연관관계 메서드==//
-    public void setMember(Member member) {
-        this.member = member;
-        member.getPost().add(this);
-    }
 }

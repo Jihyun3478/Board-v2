@@ -6,8 +6,6 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Getter @Setter
@@ -27,16 +25,4 @@ public class Member {
 
     @NotEmpty(message = "닉네임을 입력해주세요.")
     private String name;
-
-//    @OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
-//    private List<Post> posts = new ArrayList<>();
-
-//    @Builder
-//    public Member(String loginEmail, String loginPw, String name) {
-//        this.loginEmail = loginEmail;
-//        this.loginPw = loginPw;
-//        this.name = name;
-//    }
-
-//    protected Member() {}
 }
