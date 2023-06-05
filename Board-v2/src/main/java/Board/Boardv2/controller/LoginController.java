@@ -22,11 +22,13 @@ public class LoginController {
 
     private final LoginService loginService;
 
+    // 로그인 화면
     @GetMapping("/sign-in")
     public String loginForm(@ModelAttribute("loginForm") Member member) {
         return "login/loginForm";
     }
 
+    // 로그인된 홈 화면으로 이동
     @PostMapping("/sign-in")
     public String login(@Valid @ModelAttribute Member member, BindingResult bindingResult, HttpServletRequest request) {
         if (bindingResult.hasErrors()) {
@@ -43,6 +45,7 @@ public class LoginController {
         HttpSession session = request.getSession();
         session.setAttribute(SessionConst.LOGIN_MEMBER, loginMember);
 
-        return "redirect:/";
+//        return "redirect:/";
+        return "loginHome";
     }
 }

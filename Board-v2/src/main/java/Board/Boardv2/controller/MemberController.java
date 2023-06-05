@@ -18,10 +18,11 @@ public class MemberController {
 
     private final MemberRepository memberRepository;
 
-    // 회원가입
+    // 회원가입 화면
     @GetMapping("/sign-up")
     public String addForm(@ModelAttribute("member") Member member) { return "member/addMember"; }
 
+    // 회원가입 완료 시 로그인 화면으로 이동
     @PostMapping("/sign-up")
     public String save(@Valid @ModelAttribute("member")Member member, BindingResult bindingResult) {
         if(bindingResult.hasErrors()) {
