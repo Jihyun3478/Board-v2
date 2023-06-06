@@ -47,7 +47,7 @@ public class PostController {
         post.setPostHit(form.getPostHit());
 
         postService.savePost(post);
-        return "redirect:/";
+        return "post/detailPost";
     }
 
     // 게시물 전체 조회 화면
