@@ -77,7 +77,7 @@
             <tbody>
             <tr th:each="post : ${posts}">
                 <td th:text="${post.postId}">1</td>
-                <td><a href="post/post.html"
+                <td><a href="post/detailPost.html"
                        th:href="@{/boardV2/posts/{postId}(postId=${post.postId})}"
                        th:text="${post.postTitle}">title1</a></td>
                 <td th:text="${post.postWriter}">writer1</td>

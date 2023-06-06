@@ -32,8 +32,8 @@ public class PostController {
 
 
     @PostMapping("/posts/new")
-    public String create(@Valid @ModelAttribute("form") PostForm form, BindingResult result) {
-        if(result.hasErrors()) {
+    public String create(@Valid @ModelAttribute("form") PostForm form, BindingResult bindingResult) {
+        if(bindingResult.hasErrors()) {
             return "post/addPost";
         }
 
