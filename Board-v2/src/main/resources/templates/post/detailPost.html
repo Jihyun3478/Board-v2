@@ -21,7 +21,7 @@
 
     <h2 th:if="${param.status}" th:text="'등록 완료!'"></h2>
 
-    <form action="/posts/detail" th:action method="post" th:object="${form}">
+    <form action="/posts/detail"정>
         <div>
             <label th:for="postTitle">제목</label>
             <input type="text" th:field="*{postTitle}"
