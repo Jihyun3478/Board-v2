@@ -50,6 +50,13 @@ public class PostController {
         return "post/detailPost";
     }
 
+    // 게시물 상세 화면
+    @GetMapping("/posts/detail")
+    public String detailForm(Model model) {
+        model.addAttribute("form", new PostForm());
+        return "post/detailPost";
+    }
+
     // 게시물 전체 조회 화면
     @GetMapping("/posts")
     public String list(Model model) {
