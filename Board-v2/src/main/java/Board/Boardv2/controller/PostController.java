@@ -49,23 +49,23 @@ public class PostController {
         post.setPostHit(form.getPostHit());
 
         postService.savePost(post);
-        return "post/detailPost";
+        return "redirect:/";
     }
 
     // 게시물 상세 화면
-    @GetMapping("/posts/detail")
-    public String detailForm(Model model) {
-        model.addAttribute("form", new PostForm());
-        return "post/detailPost";
-    }
+//    @GetMapping("/posts/detail")
+//    public String detailForm(Model model) {
+//        model.addAttribute("form", new PostForm());
+//        return "post/detailPost";
+//    }
 
     // 게시물 전체 조회 화면
-    @GetMapping("/posts")
-    public String list(Model model) {
-        List<Post> posts = postService.findItems();
-        model.addAttribute("posts", posts);
-        return "post/posts";
-    }
+//    @GetMapping("/")
+//    public String list(Model model) {
+//        List<Post> posts = postService.findItems();
+//        model.addAttribute("posts", posts);
+//        return "home";
+//    }
 
     // 게시물 수정 화면
     @GetMapping("posts/{postId}/edit")

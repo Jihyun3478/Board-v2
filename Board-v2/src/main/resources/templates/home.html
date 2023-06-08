@@ -61,28 +61,27 @@
 
             <hr class="my-4">
             <div>
-                <table class="table">
+                <table class="table table-striped">
                     <thead>
-                        <tr>
-                            <th>번호</th>
-                            <th>제목</th>
-                            <th>작성자</th>
-                            <th>작성 날짜</th>
-                            <th>조회수</th>
-                        </tr>
+                    <tr>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>날찌</th>
+                        <th>조회수</th>
+                    </tr>
                     </thead>
 
                     <tbody>
-                        <tr th:each="post : ${posts}">
-                            <td th:text="${post.postId}">1</td>
-                            <td th:text="${post.postTitle}">title1</a></td>
-                            <td th:text="${post.postWriter}">writer1</td>
-                            <td th:text="${post.postDate}">2023-05-30</td>
-                            <td th:text="${post.postHit}">10</td>
-                        </tr>
+                    <tr th:each="post : ${posts}">
+                        <td th:text="${post.postId}"></td>
+                        <td th:text="${post.postTitle}"></td>
+                        <td th:text="${post.postWriter}"></td>
+                        <td th:text="${post.postDate}"></td>
+                        <td th:text="${post.postHit}"></td>
+                    </tr>
                     </tbody>
                 </table>
-
             </div>
         </div> <!-- /container -->
         <script src="js/bootstrap.bundle.min.js"></script>
