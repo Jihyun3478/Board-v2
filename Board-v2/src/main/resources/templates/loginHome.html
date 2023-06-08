@@ -56,33 +56,33 @@
     <div class="row">
         <div class="col">
             <button class="btn btn-primary float-end"
-                    th:onclick="|location.href='@{/post/addPost}'|"
+                    th:onclick="|location.href='@{/posts/new}'|"
                     type="button">게시물 등록</button>
         </div>
     </div>
 
     <hr class="my-4">
     <div>
-        <table class="table">
+        <table class="table table-striped">
             <thead>
             <tr>
                 <th>번호</th>
                 <th>제목</th>
                 <th>작성자</th>
-                <th>작성 날짜</th>
+                <th>날짜</th>
                 <th>조회수</th>
             </tr>
             </thead>
 
             <tbody>
             <tr th:each="post : ${posts}">
-                <td th:text="${post.postId}">1</td>
+                <td th:text="${post.postId}"></td>
                 <td><a href="post/detailPost.html"
                        th:href="@{/boardV2/posts/{postId}(postId=${post.postId})}"
-                       th:text="${post.postTitle}">title1</a></td>
-                <td th:text="${post.postWriter}">writer1</td>
-                <td th:text="${post.postDate}">2023-05-30</td>
-                <td th:text="${post.postHit}">10</td>
+                       th:text="${post.postTitle}"></a></td>
+                <td th:text="${post.postWriter}"></td>
+                <td th:text="${post.postDate}"></td>
+                <td th:text="${post.postHit}"></td>
             </tr>
             </tbody>
         </table>
