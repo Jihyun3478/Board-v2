@@ -53,19 +53,11 @@ public class PostController {
     }
 
     // 게시물 상세 화면
-//    @GetMapping("/posts/detail")
-//    public String detailForm(Model model) {
-//        model.addAttribute("form", new PostForm());
-//        return "post/detailPost";
-//    }
-
-    // 게시물 전체 조회 화면
-//    @GetMapping("/")
-//    public String list(Model model) {
-//        List<Post> posts = postService.findItems();
-//        model.addAttribute("posts", posts);
-//        return "home";
-//    }
+    @GetMapping("/posts/detail")
+    public String detailForm(Model model) {
+        model.addAttribute("form", new PostForm());
+        return "post/detailPost";
+    }
 
     // 게시물 수정 화면
     @GetMapping("posts/{postId}/edit")
