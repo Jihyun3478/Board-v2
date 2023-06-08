@@ -21,17 +21,35 @@
 
     <h2 th:if="${param.status}" th:text="'등록 완료!'"></h2>
 
-    <form action="/posts/detail"정>
+    <form action="/posts/detail" th:action method="post" th:object="${form}">
+        <div>
+            <label th:for="postWriter">작성자</label>
+            <input type="text" th:field="*{postWriter}"
+                   class="form-control" readonly>
+        </div>
+
+        <div>
+            <label th:for="postDate">작성날짜</label>
+            <input type="text" th:field="*{postDate}"
+                   class="form-control" readonly>
+        </div>
+
+        <div>
+            <label th:for="postHit">조회수</label>
+            <input type="text" th:field="*{postHit}"
+                   class="form-control" readonly>
+        </div>
+
         <div>
             <label th:for="postTitle">제목</label>
             <input type="text" th:field="*{postTitle}"
-                   class="form-control" placeholder="제목을 입력하세요" readonly>
+                   class="form-control" readonly>
         </div>
 
         <div>
             <label th:for="postContent">내용</label>
             <input type="text" th:field="*{postContent}"
-                   class="form-control" placeholder="내용을 입력하세요" readonly>
+                   class="form-control" readonly>
         </div>
 
         <hr class="my-4">

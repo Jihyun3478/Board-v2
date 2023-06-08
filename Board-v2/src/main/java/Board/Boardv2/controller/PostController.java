@@ -41,9 +41,11 @@ public class PostController {
         Member member = new Member();
 
         post.setPostTitle(form.getPostTitle());
-        post.setPostWriter(member.getName());
+//        post.setPostWriter(member.getName());
+        post.setPostWriter(form.getPostWriter());
         post.setPostContent(form.getPostContent());
-        post.setPostDate(String.valueOf(LocalDate.now()));
+//        post.setPostDate(String.valueOf(LocalDate.now()));
+        post.setPostDate(form.getPostDate());
         post.setPostHit(form.getPostHit());
 
         postService.savePost(post);
