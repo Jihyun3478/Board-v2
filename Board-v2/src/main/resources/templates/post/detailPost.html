@@ -19,7 +19,7 @@
         <h2>게시물 상세</h2>
     </div>
 
-    <form action="/posts/detail" th:action method="post" th:object="${form}">
+    <form method="post" th:object="${form}">
         <div>
             <label th:for="postWriter">작성자</label>
             <input type="text" th:field="*{postWriter}"

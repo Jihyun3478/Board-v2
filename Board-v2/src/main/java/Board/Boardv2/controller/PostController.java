@@ -54,7 +54,7 @@ public class PostController {
 
     // 게시물 상세 화면
     @GetMapping("/posts/detail/{postId}")
-    public String detailForm(@PathVariable("postId") Long postId, Model model) {
+    public String detailForm(@PathVariable Long postId, Model model) {
         Post post = postService.findOne(postId);
 
         PostForm form = new PostForm();
@@ -64,7 +64,7 @@ public class PostController {
         form.setPostContent(post.getPostContent());
         form.setPostHit(post.getPostHit());
 
-        model.addAttribute("form", new PostForm());
+        model.addAttribute("form", form);
         return "post/detailPost";
     }
 
