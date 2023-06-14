@@ -53,6 +53,7 @@ public class PostController {
     }
 
     // 게시물 상세 화면
+//    <a th:href="@{/posts/datail/{postId}(postId=${post.postId})}"></a>
     @GetMapping("/posts/detail/{postId}")
     public String detailForm(@PathVariable("postId") Long postId, Model model) {
         Post post = postService.findOne(postId);
