@@ -74,9 +74,9 @@ public class PostController {
         return "post/editPost";
     }
 
-    @PostMapping("posts/{postId}/edit")
-    public String updatePost(@PathVariable Long postId, @ModelAttribute("form") PostForm form) {
-        postService.updatePost(postId, form.getPostTitle(),form.getPostContent());
-        return "redirect:/posts";
-    }
+//    @PostMapping("posts/{postId}/edit")
+//    public String updatePost(@PathVariable Long postId, @ModelAttribute("form") PostForm form) {
+//        postService.updatePost(postId, form.getPostTitle(),form.getPostContent());
+//        return "redirect:/posts";
+//    }
 }
